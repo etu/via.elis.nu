@@ -28,7 +28,7 @@
          rotate="0 0 0 0"
          dy="0 0 0"
          dx="0 -3 8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans'">IKA</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';">IKA</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,39.320711,-0.12688594)"
@@ -37,6 +37,6 @@
          x="45.333984"
          y="326.55075"
          id="tspan34"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans'">AR</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';">AR</tspan></text>
   </g>
 </svg>
