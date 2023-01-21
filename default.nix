@@ -13,6 +13,10 @@ in stdenv.mkDerivation {
     pkgs.inkscape
     pkgs.nodePackages.svgo
     pkgs.qrencode
+
+    ((pkgs.emacsPackagesFor pkgs.emacs-nox).emacsWithPackages (epkgs: with epkgs; [
+      org
+    ]))
   ];
 
   buildPhase = ''
@@ -30,10 +34,13 @@ in stdenv.mkDerivation {
 
     # Embed text link on the QR code
     convert qrcode_logo.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${domain}" qrcode.png
+
+    # Publish org files
+    env HOME=. emacs --batch --load=publish.el
   '';
 
   installPhase = ''
     mkdir $out
-    cp -v logo.png logo.svg qrcode.png $out
+    cp -v output/* $out
   '';
 }

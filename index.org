@@ -1,0 +1,15 @@
+# Disable generated timestamp.
+#+OPTIONS: timestamp:nil
+
+#+AUTHOR: Caroline & Elis Hirwing <via@elis.nu>
+#+DATE: <2023-01-21 Sat 10:00+0100>
+#+EMAIL: via@hirwing.se
+#+TITLE: Vegan i Arvika 🌱
+
+Vad är detta?
+
+** Kontakt
+Kontakta oss via epost lol.
+
+** Uppförandekod
+Foo bar baz, var snäll.
