@@ -24,7 +24,7 @@ in stdenv.mkDerivation {
     svgo logo.svg
 
     # Export SVG to PNG
-    inkscape --export-type=png --export-filename=logo.png logo.svg
+    inkscape --export-type=png --export-filename=logo.png --export-width=768 --export-height=227 logo.svg
 
     # Generate QR code with link
     qrencode -m 9 -s 9 -l H -o qrcode_plain.png --foreground "2d7f35" "https://${domain}"
