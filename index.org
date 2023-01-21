@@ -1,15 +1,47 @@
 # Disable generated timestamp.
 #+OPTIONS: timestamp:nil
 
-#+AUTHOR: Caroline & Elis Hirwing <via@elis.nu>
+#+AUTHOR: Vegan i Arvika <via@elis.nu>
 #+DATE: <2023-01-21 Sat 10:00+0100>
 #+EMAIL: via@hirwing.se
 #+TITLE: Vegan i Arvika 🌱
 
-Vad är detta?
+Vi vill bygga en mötesplats där veganer kan mötas i en trygg och fördomsfri
+miljö för att öppet prata bland annat följande ämnen:
+ - Etiska värderingar kring veganism.
+ - Hur olika personer ställer sig till icke-veganer.
+ - Träning och god hälsa som vegan.
+ - Receptbyten och andra kostrelaterade frågor.
+
+*** Vad planerar ni att göra?
+Vi vill hitta fler veganer som vill mötas och till exempel ta en fika eller
+äta mat i gott sällskap.
+
+Vi kräver inte att samtliga närvarande är veganer, men vi ser gärna att man
+håller sig till veganska produkter i gruppens möten. Vi kräver dock att man
+följer uppförandekoden.
 
 ** Kontakt
-Kontakta oss via epost lol.
+Om du är intresserad av att träffas och delta av information när vi tänkte
+träffas så skicka gärna ett mail till [[mailto:via@elis.nu?subject=Intresserad vegan i Arvika 🌱][via@elis.nu]] så hör vi av oss.
+
+** Saknas denna information någonstans?
+Om du tycker att denna information saknas någonstans och du vill sprida den
+ytterligare så kan du ladda ner och skriva ut vårat [[./print.pdf][flygblad]].
 
 ** Uppförandekod
-Foo bar baz, var snäll.
+Det primära syftet med gruppen är att veganer ska känna sig bekväma att
+uttrycka åsikter om veganism som följer den definition av veganism som står
+nedan utan att känna att någon dömmer dem för att ha dessa åsikter. Detta är
+för att skapa en trygg miljö riktad mot veganer.
+
+** Definition av veganism
+#+BEGIN_QUOTE
+"Veganism är en filosofi och ett levnadssätt som strävar efter att utesluta –
+så långt som praktiskt möjligt – detta innefattar alla former av exploatering
+och utnyttjande av djur för mat, kläder eller något annat syfte. Målet är
+även att i förlängningen främja utveckling och användning av djurfria
+alternativ till förmån för djur, människor och miljön. I kosttermer betecknar
+det praxis att avstå från alla produkter som helt eller delvis kommer från
+djur." --- Översatt från [[https://www.vegansociety.com/go-vegan/definition-veganism][Vegan Societys definition av veganism]].
+#+END_QUOTE
