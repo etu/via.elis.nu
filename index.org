@@ -25,10 +25,6 @@ följer uppförandekoden.
 Om du är intresserad av att träffas och delta av information när vi tänkte
 träffas så skicka gärna ett mail till [[mailto:via@elis.nu?subject=Intresserad vegan i Arvika 🌱][via@elis.nu]] så hör vi av oss.
 
-** Saknas denna information någonstans?
-Om du tycker att denna information saknas någonstans och du vill sprida den
-ytterligare så kan du ladda ner och skriva ut vårat [[./print.pdf][flygblad]].
-
 ** Uppförandekod
 Det primära syftet med gruppen är att veganer ska känna sig bekväma att
 uttrycka åsikter om veganism som följer den definition av veganism som står
@@ -45,3 +41,7 @@ alternativ till förmån för djur, människor och miljön. I kosttermer beteckn
 det praxis att avstå från alla produkter som helt eller delvis kommer från
 djur." --- Översatt från [[https://www.vegansociety.com/go-vegan/definition-veganism][Vegan Societys definition av veganism]].
 #+END_QUOTE
+
+** Saknas denna information någonstans?
+Om du tycker att denna information saknas någonstans och du vill sprida den
+ytterligare så kan du ladda ner och skriva ut vårat [[./print.pdf][flygblad]].
