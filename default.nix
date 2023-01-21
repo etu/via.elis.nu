@@ -7,6 +7,7 @@ let
   }) {};
 
   domain = "via.elis.nu";
+  email = "via@elis.nu";
 
 in pkgs.stdenv.mkDerivation {
   name = domain;
@@ -47,7 +48,7 @@ in pkgs.stdenv.mkDerivation {
 
     # Generate QR code with link
     qrencode -m 9 -s 9 -l H -o qrcode_plain_web.png --foreground "2d7f35" "https://${domain}"
-    qrencode -m 9 -s 9 -l H -o qrcode_plain_mail.png --foreground "2d7f35" "mailto:via@elis.nu?subject=Intresserad vegan i Arvika 🌱"
+    qrencode -m 9 -s 9 -l H -o qrcode_plain_mail.png --foreground "2d7f35" "mailto:${email}?subject=Intresserad vegan i Arvika 🌱"
 
     # Embed description on the QR code
     convert qrcode_plain_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity north -pointsize 36 -fill "#2d7f35" -annotate +0+10 "Hemsida:" qrcode_header_web.png
@@ -55,7 +56,7 @@ in pkgs.stdenv.mkDerivation {
 
     # Embed contents on the QR code
     convert qrcode_header_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${domain}" qrcode_web.png
-    convert qrcode_header_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "via@elis.nu" qrcode_mail.png
+    convert qrcode_header_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${email}" qrcode_mail.png
 
     # Publish org files
     env HOME=. emacs --batch --load=publish.el
