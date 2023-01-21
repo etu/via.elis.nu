@@ -17,7 +17,6 @@ in pkgs.stdenv.mkDerivation {
   nativeBuildInputs = [
     pkgs.imagemagick
     pkgs.inkscape
-    pkgs.nodePackages.svgo
     pkgs.qrencode
 
     ((pkgs.emacsPackagesFor pkgs.emacs-nox).emacsWithPackages (epkgs: with epkgs; [
@@ -39,9 +38,6 @@ in pkgs.stdenv.mkDerivation {
   ];
 
   buildPhase = ''
-    # Optimize SVG file
-    svgo logo.svg
-
     # Export SVG to PNG
     inkscape --export-type=png --export-filename=logo.png --export-width=768 logo.svg
     inkscape --export-type=png --export-filename=logo_print.png --export-width=2480 logo.svg
