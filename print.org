@@ -1,5 +1,4 @@
-#+TITLE: Vegan i Arvika 🌱
-#+OPTIONS: toc:nil author:nil date:nil num:nil title:nil
+#+OPTIONS: toc:nil num:nil title:nil
 #+LANGUAGE: sv
 #+LATEX_CLASS: article
 #+LATEX_CLASS_OPTIONS: [12pt,a4paper]
@@ -8,12 +7,33 @@
 #+LATEX_HEADER: \setlength{\parskip}{6pt}
 #+LATEX_HEADER: \usepackage[paper=a4paper,lmargin=10mm,rmargin=10mm,tmargin=10mm,bmargin=10mm]{geometry}
 
+#+AUTHOR: Vegan i Arvika <via@elis.nu>
+#+DATE: <2023-01-21 Sat 10:00+0100>
+#+EMAIL: via@hirwing.se
+#+TITLE: Vegan i Arvika 🌱
+
 [[./logo_print.png]]
 -----------------------------------------------------------------------------
 
-* Är du vegan och bor i Arvika?
-Printed document 🌱
+#+NAME: fig:qrcode_mail
+#+ATTR_LATEX: :float wrap :width 0.38\textwidth :placement {r}{0.4\textwidth}
+[[./qrcode_mail.png]]
 
+* Är du vegan och bor i Arvika?
+Vi bygger en mötesplats för veganer som vill träffas och diskutera några av
+följande ämnen i en trygg miljö:
+ - Etiska värderingar kring veganism.
+ - Hur olika personer ställer sig till icke-veganer.
+ - Träning och god hälsa som vegan.
+ - Receptbyten och andra kostrelaterade frågor.
+
+* Vill du vara med på våra träffar?
 #+NAME: fig:qrcode_web
 #+ATTR_LATEX: :float wrap :width 0.38\textwidth :placement {r}{0.4\textwidth}
 [[./qrcode_web.png]]
+
+Kontakta oss på epost [[mailto:via@elis.nu][via@elis.nu]], eller scanna kontakt-koden till höger.
+
+* Vill du veta mer?
+Besök vår webbsida för mer information, [[https://via.elis.nu/][https://via.elis.nu]], eller scanna den
+andra koden till höger. Har du fler frågar så kan du alltid kontakta oss.
