@@ -32,8 +32,7 @@
          :html-validation-link nil            ; Disable HTML validation link
          :section-numbers nil                 ; Disable section numbers
          :with-toc nil                        ; Disable table of content
-         :language "se"                       ; Set language
-         )
+         :language "se")                      ; Set language
 
         ("site-static"
          :base-directory "."
@@ -41,9 +40,17 @@
          :publishing-directory "./output"
          :publishing-function org-publish-attachment
          :exclude ".*"
-         :include [ "logo.png" "logo.svg" "qrcode.png" "style.css" ])
+         :include [ "logo.png" "qrcode.png" "style.css" ])
 
-        ("site" :components ("site-org" "site-static"))))
+        ("print"
+         :base-directory "."
+         :publishing-directory "./output"
+         :publishing-function org-latex-publish-to-pdf
+         :with-latex t
+         :exclude ".*"
+         :include [ "print.org" ])
+
+        ("site" :components ("site-org" "site-static" "print"))))
 
 (org-publish "site")
 

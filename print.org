@@ -1,0 +1,15 @@
+#+TITLE: Vegan i Arvika 🌱
+#+OPTIONS: toc:nil author:nil date:nil num:nil title:nil
+#+LANGUAGE: sv
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [12pt,a4paper]
+#+LATEX_HEADER: \usepackage[swedish]{babel}
+#+LATEX_HEADER: \setlength{\parindent}{0pt}
+#+LATEX_HEADER: \setlength{\parskip}{6pt}
+#+LATEX_HEADER: \usepackage[paper=a4paper,lmargin=10mm,rmargin=10mm,tmargin=10mm,bmargin=10mm]{geometry}
+
+[[./logo_print.png]]
+-----------------------------------------------------------------------------
+
+* Är du vegan och bor i Arvika?
+Printed document 🌱

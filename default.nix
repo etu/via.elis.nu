@@ -17,6 +17,19 @@ in stdenv.mkDerivation {
     ((pkgs.emacsPackagesFor pkgs.emacs-nox).emacsWithPackages (epkgs: with epkgs; [
       org
     ]))
+
+    (pkgs.texlive.combine {
+      inherit (pkgs.texlive) scheme-basic
+        babel-swedish
+        booktabs
+        capt-of
+        cm-super
+        etoolbox
+        hyphen-swedish
+        parskip
+        ulem
+        wrapfig;
+    })
   ];
 
   buildPhase = ''
@@ -24,7 +37,8 @@ in stdenv.mkDerivation {
     svgo logo.svg
 
     # Export SVG to PNG
-    inkscape --export-type=png --export-filename=logo.png --export-width=768 --export-height=227 logo.svg
+    inkscape --export-type=png --export-filename=logo.png --export-width=768 logo.svg
+    inkscape --export-type=png --export-filename=logo_print.png --export-width=2480 logo.svg
 
     # Generate QR code with link
     qrencode -m 9 -s 9 -l H -o qrcode_plain.png --foreground "2d7f35" "https://${domain}"
