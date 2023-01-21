@@ -40,7 +40,7 @@
          :publishing-directory "./output"
          :publishing-function org-publish-attachment
          :exclude ".*"
-         :include [ "logo.png" "qrcode.png" "style.css" ])
+         :include [ "logo.png" "style.css" ])
 
         ("print"
          :base-directory "."

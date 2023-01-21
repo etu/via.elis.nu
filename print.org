@@ -13,3 +13,7 @@
 
 * Är du vegan och bor i Arvika?
 Printed document 🌱
+
+#+NAME: fig:qrcode_web
+#+ATTR_LATEX: :float wrap :width 0.38\textwidth :placement {r}{0.4\textwidth}
+[[./qrcode_web.png]]
