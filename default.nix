@@ -42,12 +42,15 @@ in stdenv.mkDerivation {
 
     # Generate QR code with link
     qrencode -m 9 -s 9 -l H -o qrcode_plain_web.png --foreground "2d7f35" "https://${domain}"
+    qrencode -m 9 -s 9 -l H -o qrcode_plain_mail.png --foreground "2d7f35" "mailto:via@elis.nu?subject=Intresserad vegan i Arvika 🌱"
 
-    # Embed logo on the QR code
-    magick qrcode_plain_web.png logo.png -resize %[fx:u.w/1.5]x%[fx:u.h/1.5] -gravity north -composite qrcode_logo_web.png
+    # Embed description on the QR code
+    convert qrcode_plain_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity north -pointsize 36 -fill "#2d7f35" -annotate +0+10 "Hemsida:" qrcode_header_web.png
+    convert qrcode_plain_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity north -pointsize 36 -fill "#2d7f35" -annotate +0+10 "Kontakt:" qrcode_header_mail.png
 
-    # Embed text link on the QR code
-    convert qrcode_logo_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${domain}" qrcode_web.png
+    # Embed contents on the QR code
+    convert qrcode_header_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${domain}" qrcode_web.png
+    convert qrcode_header_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "via@elis.nu" qrcode_mail.png
 
     # Publish org files
     env HOME=. emacs --batch --load=publish.el
