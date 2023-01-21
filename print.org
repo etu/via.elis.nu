@@ -8,7 +8,7 @@
 #+LATEX_HEADER: \usepackage[paper=a4paper,lmargin=10mm,rmargin=10mm,tmargin=10mm,bmargin=10mm]{geometry}
 
 #+AUTHOR: Vegan i Arvika <via@elis.nu>
-#+DATE: <2023-01-21 Sat 10:00+0100>
+#+DATE: <2023-01-21 Sat 23:00+0100>
 #+EMAIL: via@hirwing.se
 #+TITLE: Vegan i Arvika 🌱
 
