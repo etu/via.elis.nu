@@ -1,10 +1,15 @@
-{ pkgs ? import <nixpkgs> {}, stdenv ? pkgs.stdenv }:
+{ ... }:
 
 let
+  pkgs = import (builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/befc83905c965adfd33e5cae49acb0351f6e0404.tar.gz";
+    sha256 = "0m0ik7z06q3rshhhrg2p0vsrkf2jnqcq5gq1q6wb9g291rhyk6h2";
+  }) {};
+
   domain = "via.elis.nu";
 
-in stdenv.mkDerivation {
-  name = "arvika-vegans";
+in pkgs.stdenv.mkDerivation {
+  name = domain;
 
   src = ./.;
 
