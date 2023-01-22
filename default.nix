@@ -17,6 +17,7 @@ in pkgs.stdenv.mkDerivation {
   nativeBuildInputs = [
     pkgs.imagemagick
     pkgs.inkscape
+    pkgs.pngquant
     pkgs.qrencode
 
     ((pkgs.emacsPackagesFor pkgs.emacs-nox).emacsWithPackages (epkgs: with epkgs; [
@@ -53,6 +54,9 @@ in pkgs.stdenv.mkDerivation {
     # Embed contents on the QR code
     convert qrcode_header_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${domain}" qrcode_web.png
     convert qrcode_header_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${email}" qrcode_mail.png
+
+    # Optimize PNG logo before publishing the site.
+    pngquant --skip-if-larger --verbose --strip logo.png && rm logo.png && mv logo-fs8.png logo.png
 
     # Publish org files
     env HOME=. emacs --batch --load=publish.el
