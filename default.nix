@@ -58,6 +58,11 @@ in pkgs.stdenv.mkDerivation {
     # Optimize PNG logo before publishing the site.
     pngquant --skip-if-larger --verbose --strip logo.png && rm logo.png && mv logo-fs8.png logo.png
 
+    # Optimize print images before publishing the site.
+    pngquant --skip-if-larger --verbose --strip logo_print.png && rm logo_print.png && mv logo_print-fs8.png logo_print.png
+    pngquant --skip-if-larger --verbose --strip qrcode_web.png && rm qrcode_web.png && mv qrcode_web-fs8.png qrcode_web.png
+    pngquant --skip-if-larger --verbose --strip qrcode_mail.png && rm qrcode_mail.png && mv qrcode_mail-fs8.png qrcode_mail.png
+
     # Publish org files
     env HOME=. emacs --batch --load=publish.el
   '';
