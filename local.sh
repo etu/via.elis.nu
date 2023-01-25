@@ -6,7 +6,7 @@
 # ./local.sh
 #
 
-nix-build default.nix
+nix build '.#'
 
 if test -L result
 then
