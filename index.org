@@ -45,3 +45,6 @@ djur." --- Översatt från [[https://www.vegansociety.com/go-vegan/definition-ve
 ** Saknas denna information någonstans?
 Om du tycker att denna information saknas någonstans och du vill sprida den
 ytterligare så kan du ladda ner och skriva ut vårat [[./print.pdf][flygblad]].
+
+** I media
+ - [[./posts/2023-03-30-vegetarisk-skolmat-for-en-hallbar-framtid.org][Arvika Nyheter: Vegetarisk skolmat för en hållbar framtid]]
