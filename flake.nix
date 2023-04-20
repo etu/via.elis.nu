@@ -84,7 +84,7 @@
 
             installPhase = ''
               mkdir $out
-              cp -v output/* $out
+              cp -rv output/* $out
             '';
           };
       };
