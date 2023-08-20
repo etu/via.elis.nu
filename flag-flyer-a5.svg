@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<svg width="148mm" height="210mm" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: Dejavu Sans; fill: #000000; }
+    text.center { text-anchor: middle; dominant-baseline: middle; }
+
+    #header text { font-size: 14mm; }
+    #about-flag text { font-size: 5mm; }
+    #about-flag circle { stroke: #000000; stroke-width: 0.25mm; }
+    #about-flag text.header, #interested-question text, #vegan-i-arvika-links text { font-size: 7mm; }
+
+    #vegan-i-arvika-logo text { font-size: 22mm; fill: #2D7f35; }
+    #vegan-i-arvika-logo #symbol path { fill: #7dc246; }
+
+    .flag-blue { fill: #0077C8; }
+    .flag-green { fill: #00B140; }
+    .flag-white { fill: #FFFFFF; }
+  </style>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="148mm" height="210mm" style="fill: #FFFFFF;" />
+
+  <!-- Header text -->
+  <g id="header">
+    <text class="center">
+      <tspan x="74mm" y="16mm">Veganska flaggan</tspan>
+      <tspan x="74mm" y="32mm">för empati</tspan>
+    </text>
+  </g>
+
+  <!-- Vegan flag -->
+  <g id="vegan-flag" transform="translate(100,150) scale(0.3)">
+    <rect class="flag-blue" height="720" width="1200" />
+    <path class="flag-white" d="M 0,0 H 1200 L 600,720 Z" />
+    <path class="flag-green" d="M 240,0 H 960 L 600,432 Z" />
+  </g>
+
+  <!-- About flag section -->
+  <g id="about-flag">
+    <text class="center header" x="74mm" y="107mm">Om flaggan</text>
+
+    <!-- Flygande djur -->
+    <circle class="flag-blue" cx="18.5mm" cy="119mm" r="6mm" />
+    <text class="center">
+      <tspan x="18.5mm" y="132mm">Flygande</tspan>
+      <tspan x="18.5mm" y="138mm">djur</tspan>
+    </text>
+
+    <!-- Landlevande djur -->
+    <circle class="flag-green" cx="55.5mm" cy="119mm" r="6mm" />
+    <text class="center">
+      <tspan x="55.5mm" y="132mm">Landlevande</tspan>
+      <tspan x="55.5mm" y="138mm">djur inklusive</tspan>
+      <tspan x="55.5mm" y="144mm">människor</tspan>
+    </text>
+
+    <!-- Vattenlevande djur -->
+    <circle class="flag-blue" cx="92.5mm" cy="119mm" r="6mm" />
+    <text class="center">
+      <tspan x="92.5mm" y="132mm">Vattenlevande</tspan>
+      <tspan x="92.5mm" y="138mm">djur</tspan>
+    </text>
+
+    <!-- Enhetlighet -->
+    <circle class="flag-white" cx="129.5mm" cy="119mm" r="6mm" />
+    <text class="center">
+      <tspan x="129.5mm" y="132mm">Enhetlighet</tspan>
+      <tspan x="129.5mm" y="138mm">och</tspan>
+      <tspan x="129.5mm" y="144mm">samexistens</tspan>
+    </text>
+  </g>
+
+  <!-- Interested question -->
+  <g id="interested-question">
+    <text class="center">
+      <tspan x="74mm" y="155mm">Är du intresserad av veganism? Hör</tspan>
+      <tspan x="74mm" y="163mm">av dig till oss på Vegan i Arvika!</tspan>
+    </text>
+  </g>
+
+  <!-- Vegan i Arvika logo -->
+  <g id="vegan-i-arvika-logo" transform="translate(115.5, 638) scale(1.1)">
+    <g id="symbol" transform="translate(88, 0.25)">
+      <path d="m 45.641,3.719 c -11.625,0 -21.524,4.086 -29.688,12.25 -8.156,8.156 -12.234,18.054 -12.234,29.687 0,11.625 4.078,21.524 12.234,29.688 8.164,8.164 18.063,12.25 29.688,12.25 11.632,0 21.531,-4.086 29.687,-12.25 8.164,-8.164 12.25,-18.063 12.25,-29.688 0,-11.633 -4.086,-21.531 -12.25,-29.687 C 67.172,7.805 57.273,3.719 45.641,3.719 Z m 0,-3.719 c 12.625,0 23.39,4.453 32.297,13.359 8.906,8.907 13.359,19.672 13.359,32.297 0,12.617 -4.453,23.375 -13.359,32.282 C 69.031,86.844 58.266,91.297 45.641,91.297 33.023,91.297 22.266,86.844 13.359,77.938 4.453,69.031 0,58.273 0,45.656 0,33.031 4.453,22.266 13.359,13.359 22.266,4.453 33.023,0 45.641,0 Z M 40.828,79.047 19.297,17.813 h 8.906 L 45.641,69.406 63.094,17.813 H 72 L 50.469,79.047 Z" />
+    </g>
+    <g id="text">
+      <text id="ar" x="0mm" y="20.8mm">AR</text>
+      <text id="ik" x="42mm" y="20.8mm">IK</text>
+      <text id="a" x="64mm" y="20.8mm">A</text>
+    </g>
+  </g>
+
+  <!-- Contact links -->
+  <g id="vegan-i-arvika-links">
+    <text x="6mm" y="204mm">https://via.elis.nu</text>
+    <text x="102mm" y="204mm">via@elis.nu</text>
+  </g>
+</svg>
