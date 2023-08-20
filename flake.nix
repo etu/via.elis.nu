@@ -55,28 +55,28 @@
 
             buildPhase = ''
               # Export SVG to PNG
-              inkscape --export-type=png --export-filename=logo.png --export-width=768 logo.svg
-              inkscape --export-type=png --export-filename=logo_print.png --export-width=2480 logo.svg
+              inkscape --export-type=png --export-filename=src/logo.png --export-width=768 src/logo.svg
+              inkscape --export-type=png --export-filename=src/logo_print.png --export-width=2480 src/logo.svg
 
               # Generate QR code with link
-              qrencode -m 9 -s 9 -l H -o qrcode_plain_web.png --foreground "2d7f35" "https://${domain}"
-              qrencode -m 9 -s 9 -l H -o qrcode_plain_mail.png --foreground "2d7f35" "mailto:${email}?subject=Intresserad vegan i Arvika 🌱"
+              qrencode -m 9 -s 9 -l H -o src/qrcode_plain_web.png --foreground "2d7f35" "https://${domain}"
+              qrencode -m 9 -s 9 -l H -o src/qrcode_plain_mail.png --foreground "2d7f35" "mailto:${email}?subject=Intresserad vegan i Arvika 🌱"
 
               # Embed description on the QR code
-              convert qrcode_plain_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity north -pointsize 36 -fill "#2d7f35" -annotate +0+10 "Hemsida:" qrcode_header_web.png
-              convert qrcode_plain_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity north -pointsize 36 -fill "#2d7f35" -annotate +0+10 "Kontakt:" qrcode_header_mail.png
+              convert src/qrcode_plain_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity north -pointsize 36 -fill "#2d7f35" -annotate +0+10 "Hemsida:" src/qrcode_header_web.png
+              convert src/qrcode_plain_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity north -pointsize 36 -fill "#2d7f35" -annotate +0+10 "Kontakt:" src/qrcode_header_mail.png
 
               # Embed contents on the QR code
-              convert qrcode_header_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${domain}" qrcode_web.png
-              convert qrcode_header_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${email}" qrcode_mail.png
+              convert src/qrcode_header_web.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${domain}" src/qrcode_web.png
+              convert src/qrcode_header_mail.png -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf -gravity south -pointsize 36 -fill "#2d7f35" -annotate +0+10 "${email}" src/qrcode_mail.png
 
               # Optimize PNG logo before publishing the site.
-              pngquant --skip-if-larger --verbose --strip logo.png && rm logo.png && mv logo-fs8.png logo.png
+              pngquant --skip-if-larger --verbose --strip src/logo.png && rm src/logo.png && mv src/logo-fs8.png src/logo.png
 
               # Optimize print images before publishing the site.
-              pngquant --skip-if-larger --verbose --strip logo_print.png && rm logo_print.png && mv logo_print-fs8.png logo_print.png
-              pngquant --skip-if-larger --verbose --strip qrcode_web.png && rm qrcode_web.png && mv qrcode_web-fs8.png qrcode_web.png
-              pngquant --skip-if-larger --verbose --strip qrcode_mail.png && rm qrcode_mail.png && mv qrcode_mail-fs8.png qrcode_mail.png
+              pngquant --skip-if-larger --verbose --strip src/logo_print.png && rm src/logo_print.png && mv src/logo_print-fs8.png src/logo_print.png
+              pngquant --skip-if-larger --verbose --strip src/qrcode_web.png && rm src/qrcode_web.png && mv src/qrcode_web-fs8.png src/qrcode_web.png
+              pngquant --skip-if-larger --verbose --strip src/qrcode_mail.png && rm src/qrcode_mail.png && mv src/qrcode_mail-fs8.png src/qrcode_mail.png
 
               # Publish org files
               env HOME=. emacs --batch --load=publish.el

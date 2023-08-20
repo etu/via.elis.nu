@@ -16,7 +16,7 @@
 
 (setq org-publish-project-alist
       '(("site-org"
-         :base-directory "."
+         :base-directory "./src"
          :publishing-function org-html-publish-to-html
          :publishing-directory "./output"
          :exclude ".*"
@@ -35,7 +35,7 @@
          :language "se")                      ; Set language
 
         ("site-posts"
-         :base-directory "./posts"
+         :base-directory "./src/posts"
          :publishing-function org-html-publish-to-html
          :publishing-directory "./output/posts"
 
@@ -52,7 +52,7 @@
          :language "se")                      ; Set language
 
         ("site-static"
-         :base-directory "."
+         :base-directory "./src"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|asc\\|svg"
          :publishing-directory "./output"
          :publishing-function org-publish-attachment
@@ -60,7 +60,7 @@
          :include [ "logo.png" "style.css" ])
 
         ("print"
-         :base-directory "."
+         :base-directory "./src"
          :publishing-directory "./output"
          :publishing-function org-latex-publish-to-pdf
          :with-latex t
