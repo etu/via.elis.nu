@@ -12,7 +12,7 @@
 #+EMAIL: via@hirwing.se
 #+TITLE: Vegan i Arvika 🌱
 
-[[./logo_print.png]]
+[[./logo_flyer.png]]
 -----------------------------------------------------------------------------
 
 #+NAME: fig:qrcode_mail

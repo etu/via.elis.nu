@@ -59,15 +59,15 @@
          :exclude ".*"
          :include [ "logo.png" "style.css" ])
 
-        ("print"
+        ("flyer"
          :base-directory "./src"
          :publishing-directory "./output"
          :publishing-function org-latex-publish-to-pdf
          :with-latex t
          :exclude ".*"
-         :include [ "print.org" ])
+         :include [ "flyer.org" ])
 
-        ("site" :components ("site-org" "site-posts" "site-static" "print"))))
+        ("site" :components ("site-org" "site-posts" "site-static" "flyer"))))
 
 (org-publish "site")
 
