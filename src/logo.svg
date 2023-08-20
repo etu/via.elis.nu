@@ -1,42 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg
-   width="1349.0491"
-   height="400"
-   viewBox="0 0 356.93591 105.83333"
-   version="1.1"
-   id="arvika-vegans-logo"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <g
-     id="logo"
-     transform="matrix(4.2894892,0,0,4.2894892,-220.87316,-278.62037)">
-    <path
-       d="m 45.641,3.719 c -11.625,0 -21.524,4.086 -29.688,12.25 -8.156,8.156 -12.234,18.054 -12.234,29.687 0,11.625 4.078,21.524 12.234,29.688 8.164,8.164 18.063,12.25 29.688,12.25 11.632,0 21.531,-4.086 29.687,-12.25 8.164,-8.164 12.25,-18.063 12.25,-29.688 0,-11.633 -4.086,-21.531 -12.25,-29.687 C 67.172,7.805 57.273,3.719 45.641,3.719 Z m 0,-3.719 c 12.625,0 23.39,4.453 32.297,13.359 8.906,8.907 13.359,19.672 13.359,32.297 0,12.617 -4.453,23.375 -13.359,32.282 C 69.031,86.844 58.266,91.297 45.641,91.297 33.023,91.297 22.266,86.844 13.359,77.938 4.453,69.031 0,58.273 0,45.656 0,33.031 4.453,22.266 13.359,13.359 22.266,4.453 33.023,0 45.641,0 Z M 40.828,79.047 19.297,17.813 h 8.906 L 45.641,69.406 63.094,17.813 H 72 L 50.469,79.047 Z"
-       style="display:inline;fill:#7dc246;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="vegan-symbol"
-       transform="matrix(0.29627788,0,0,0.27024669,75.279784,64.954206)" />
-    <text
-       xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,84.663986,-0.12688594)"
-       id="(arv)IKA"
-       style="font-size:85.3333px;letter-spacing:0px;white-space:pre;display:inline;fill:#2d7f35;fill-opacity:1"><tspan
-         x="45.333984"
-         y="326.55075"
-         id="tspan32"
-         rotate="0 0 0 0"
-         dy="0 0 0"
-         dx="0 -3 8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';">IKA</tspan></text>
-    <text
-       xml:space="preserve"
-       transform="matrix(0.26458333,0,0,0.26458333,39.320711,-0.12688594)"
-       id="AR(vika)"
-       style="font-size:85.3333px;white-space:pre;display:inline;fill:#2d7f35;fill-opacity:1"><tspan
-         x="45.333984"
-         y="326.55075"
-         id="tspan34"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Sans';">AR</tspan></text>
+<svg width="79mm" height="24.3mm" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <style>
+    text {
+      font-family: DejaVu Sans;
+      font-size: 22mm;
+      fill: #2d7f35;
+    }
+    #symbol path {
+      fill: #7dc246;
+    }
+  </style>
+  <g id="symbol" transform="translate(88, 0.25)">
+    <path d="m 45.641,3.719 c -11.625,0 -21.524,4.086 -29.688,12.25 -8.156,8.156 -12.234,18.054 -12.234,29.687 0,11.625 4.078,21.524 12.234,29.688 8.164,8.164 18.063,12.25 29.688,12.25 11.632,0 21.531,-4.086 29.687,-12.25 8.164,-8.164 12.25,-18.063 12.25,-29.688 0,-11.633 -4.086,-21.531 -12.25,-29.687 C 67.172,7.805 57.273,3.719 45.641,3.719 Z m 0,-3.719 c 12.625,0 23.39,4.453 32.297,13.359 8.906,8.907 13.359,19.672 13.359,32.297 0,12.617 -4.453,23.375 -13.359,32.282 C 69.031,86.844 58.266,91.297 45.641,91.297 33.023,91.297 22.266,86.844 13.359,77.938 4.453,69.031 0,58.273 0,45.656 0,33.031 4.453,22.266 13.359,13.359 22.266,4.453 33.023,0 45.641,0 Z M 40.828,79.047 19.297,17.813 h 8.906 L 45.641,69.406 63.094,17.813 H 72 L 50.469,79.047 Z" />
+  </g>
+  <g id="text">
+    <text id="ar" x="0mm" y="20.8mm">AR</text>
+    <text id="ik" x="42mm" y="20.8mm">IK</text>
+    <text id="a" x="64mm" y="20.8mm">A</text>
   </g>
 </svg>
