@@ -17,7 +17,7 @@
       domain = "via.elis.nu";
       email = "via@elis.nu";
     in {
-      packages.default = pkgs.stdenv.mkDerivation {
+      packages.website = pkgs.stdenv.mkDerivation {
         name = domain;
 
         src = ./.;

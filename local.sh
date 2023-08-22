@@ -6,7 +6,7 @@
 # ./local.sh
 #
 
-nix build '.#'
+nix build '.#website'
 
 if test -L result
 then
