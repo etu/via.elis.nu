@@ -17,6 +17,19 @@
       domain = "via.elis.nu";
       email = "via@elis.nu";
     in {
+      packages.plain-flag-flyer-a5 =
+        pkgs.runCommandNoCC "plain-flag-flyer-a5" {
+          nativeBuildInputs = [pkgs.inkscape];
+        } ''
+          inkscape --export-type=svg \
+                   --export-filename=output.svg \
+                   --vacuum-defs \
+                   --export-plain-svg \
+                   --export-text-to-path ${./flag-flyer-a5.svg}
+
+          mv output.svg $out
+        '';
+
       packages.website = pkgs.stdenv.mkDerivation {
         name = domain;
 
