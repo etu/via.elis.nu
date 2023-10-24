@@ -57,7 +57,7 @@
          :publishing-directory "./output"
          :publishing-function org-publish-attachment
          :exclude ".*"
-         :include [ "logo.png" "style.css" ])
+         :include [ "logo.png" "style.css" "CNAME" ])
 
         ("flyer"
          :base-directory "./src"
