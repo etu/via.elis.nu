@@ -1,9 +1,7 @@
 {
   description = "etu/via.elis.nu";
 
-  inputs = {
-    flake-utils.url = "flake-utils";
-  };
+  inputs.flake-utils.url = "flake-utils";
 
   outputs = {
     flake-utils,
