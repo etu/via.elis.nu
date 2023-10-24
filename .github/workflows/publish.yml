@@ -1,0 +1,27 @@
+---
+name: Publish
+
+'on':
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@v6
+      - uses: DeterminateSystems/magic-nix-cache-action@v2
+
+      - run: nix build .#website
+
+      - uses: s0/git-publish-subdir-action@v2.6.0
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: ./result
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
