@@ -1,4 +1,3 @@
-# Disable generated timestamp.
 #+OPTIONS: timestamp:nil
 
 #+AUTHOR: Vegan i Arvika <via@elis.nu>
