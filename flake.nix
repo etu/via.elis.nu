@@ -2,8 +2,7 @@
   description = "etu/via.elis.nu";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.url = "flake-utils";
   };
 
   outputs = {
