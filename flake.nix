@@ -86,6 +86,9 @@
           pngquant --skip-if-larger --verbose --strip src/qrcode_web.png && rm src/qrcode_web.png && mv src/qrcode_web-fs8.png src/qrcode_web.png
           pngquant --skip-if-larger --verbose --strip src/qrcode_mail.png && rm src/qrcode_mail.png && mv src/qrcode_mail-fs8.png src/qrcode_mail.png
 
+          # Set domain for github pages
+          echo ${domain} > src/CNAME
+
           # Publish org files
           env HOME=. emacs --batch --load=publish.el
         '';
