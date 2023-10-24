@@ -18,9 +18,7 @@ jobs:
 
       - run: nix build .#website
 
-      - uses: s0/git-publish-subdir-action@v2.6.0
-        env:
-          REPO: self
-          BRANCH: gh-pages
-          FOLDER: ./result
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./result
