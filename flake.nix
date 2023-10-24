@@ -10,7 +10,7 @@
     nixpkgs,
     ...
   }:
-    flake-utils.lib.eachDefaultSystem (system: let
+    flake-utils.lib.eachSystem ["x86_64-linux"] (system: let
       pkgs = import nixpkgs {inherit system;};
       color = "2d7f35"; # Color used for qr codes and such
       domain = "via.elis.nu";
