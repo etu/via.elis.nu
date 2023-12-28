@@ -24,7 +24,9 @@
 
          ;; Export options
          :html-preamble "<div id=\"logo\"><img src=\"/logo.png\" alt=\"Alt text\"></div>"
-	     :html-head-extra "<meta name=\"referrer\" content=\"no-referrer\" />\n<link rel=\"stylesheet\" href=\"/style.css\" type=\"text/css\"/>"
+	     :html-head-extra "
+           <meta name=\"referrer\" content=\"no-referrer\" />\n<link rel=\"stylesheet\" href=\"/style.css\" type=\"text/css\"/>
+         "
          :html-container "article"            ; Set HTML container
          :html-doctype "html5"                ; Make it html5
          :html-head-include-default-style nil ; Disable default CSS styles
@@ -41,7 +43,9 @@
 
          ;; Export options
          :html-preamble "<div id=\"logo\"><img src=\"/logo.png\" alt=\"Alt text\"></div><div><a href=\"/\">⬅️ Tillbaka till startsidan</a></div>"
-	     :html-head-extra "<meta name=\"referrer\" content=\"no-referrer\" />\n<link rel=\"stylesheet\" href=\"/style.css\" type=\"text/css\"/>"
+	     :html-head-extra "
+           <meta name=\"referrer\" content=\"no-referrer\" />\n<link rel=\"stylesheet\" href=\"/style.css\" type=\"text/css\"/>
+         "
          :html-container "article"            ; Set HTML container
          :html-doctype "html5"                ; Make it html5
          :html-head-include-default-style nil ; Disable default CSS styles
