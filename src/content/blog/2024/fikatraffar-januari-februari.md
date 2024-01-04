@@ -6,6 +6,8 @@ ogImagePath: /blog/2024/fikatraffar-januari-februari.png
 ---
 ![Poster för träffarna](/blog/2024/fikatraffar-januari-februari.png)
 
+[{{< fa fab facebook >}} facebook evenemang.](https://fb.me/e/1BtnqEwRu)
+
 Vi har nu satt datum för våra första två fika-träffar! Vi hoppas på
 att planera in fler framöver.
 
@@ -20,5 +22,3 @@ Vi träffas vid (kanske inne om det är kallt) Esperesso House vid
 Torget i Arvika.
 
 Vi ser fram emot att träffa er där. Väl mött.
-
-[{{< fa fab facebook >}} facebook evenemang.](https://fb.me/e/1BtnqEwRu)
