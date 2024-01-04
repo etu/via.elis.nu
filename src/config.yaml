@@ -1,0 +1,30 @@
+baseURL: 'https://example.org/'
+defaultContentLanguage: sv
+title: 'Vegan i Arvika 🌱'
+theme: via
+
+params:
+  copyrightOwner: 2023 Vegan i Arvika
+
+  logoPath: /img/logo.png
+  ogImagePath: /img/og-image.png
+
+languages:
+  sv:
+    menu:
+      main:
+        - name: Start
+          url: /
+          weight: 10
+
+        - name: Kontakt
+          url: /#kontakt
+          weight: 20
+
+        - name: Media
+          url: /#i-media
+          weight: 30
+
+        - name: Blogg
+          url: /blog
+          weight: 40

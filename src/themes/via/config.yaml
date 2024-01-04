@@ -1,0 +1,7 @@
+baseURL: https://example.org/
+title: My New Hugo Site
+theme: via
+
+disableKinds:
+  - taxonomy
+  - term

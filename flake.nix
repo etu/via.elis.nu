@@ -6,6 +6,7 @@
   outputs = {
     flake-utils,
     nixpkgs,
+    self,
     ...
   }:
     flake-utils.lib.eachSystem ["x86_64-linux"] (system: let
@@ -27,9 +28,40 @@
           mv output.svg $out
         '';
 
-      packages.website = pkgs.stdenv.mkDerivation {
-        name = domain;
+      packages.hugo = pkgs.symlinkJoin {
+        name = "hugo-${pkgs.hugo.version}-dart-sass-embedded-${pkgs.dart-sass.version}-bundle";
 
+        buildInputs = [pkgs.makeWrapper];
+        paths = [pkgs.hugo pkgs.dart-sass];
+
+        postBuild = "wrapProgram $out/bin/hugo --prefix PATH : ${pkgs.dart-sass}/bin";
+
+        meta.mainProgram = "hugo";
+      };
+
+      packages.fontawesome = let
+        version = "6.5.1";
+      in
+        pkgs.stdenv.mkDerivation {
+          pname = "fontawesome-free";
+          inherit version;
+
+          src = pkgs.fetchzip {
+            url = "https://use.fontawesome.com/releases/v${version}/fontawesome-free-${version}-web.zip";
+            hash = "sha256-gXXhKyTDC/Q6PBzpWRFvx/TxcUd3msaRSdC3ZHFzCoc=";
+          };
+
+          buildPhase = ":";
+
+          installPhase = ''
+            mkdir -p $out
+
+            cp -vr scss webfonts $out
+          '';
+        };
+
+      packages.flyer = pkgs.stdenv.mkDerivation {
+        name = "flyer.pdf";
         src = ./.;
 
         nativeBuildInputs = [
@@ -61,90 +93,77 @@
         ];
 
         buildPhase = ''
-          # Export SVG to PNG
-          inkscape --export-type=png                    \
-                   --export-filename=src/logo.png       \
-                   --export-width=768                   \
-                   src/logo.svg
+          mkdir -p tmp
 
-          inkscape --export-type=png                    \
-                   --export-filename=src/logo_flyer.png \
-                   --export-width=2480                  \
-                   src/logo.svg
+          # Export SVG to PNG
+          inkscape --export-type=png                \
+                   --export-filename=logo_flyer.png \
+                   --export-width=2480              \
+                   src/static/img/logo.svg
 
 
           # Generate QR code with link
-          qrencode -m 9 -s 9 -l H -o src/qrcode_plain_web.png  \
-                   --foreground "${color}"                     \
+          qrencode -m 9 -s 9 -l H -o qrcode_plain_web.png  \
+                   --foreground "${color}"                 \
                    "https://${domain}"
 
-          qrencode -m 9 -s 9 -l H -o src/qrcode_plain_mail.png \
-                   --foreground "${color}"                     \
+          qrencode -m 9 -s 9 -l H -o qrcode_plain_mail.png \
+                   --foreground "${color}"                 \
                    "mailto:${email}?subject=Intresserad vegan i Arvika 🌱"
 
 
           # Embed description on the QR code
-          convert src/qrcode_plain_web.png                                       \
+          convert qrcode_plain_web.png                                           \
                   -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf \
                   -gravity north                                                 \
                   -pointsize 36                                                  \
                   -fill "#${color}"                                              \
                   -annotate +0+10                                                \
                   "Hemsida:"                                                     \
-                  src/qrcode_header_web.png
+                  qrcode_header_web.png
 
-          convert src/qrcode_plain_mail.png                                      \
+          convert qrcode_plain_mail.png                                          \
                   -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf \
                   -gravity north                                                 \
                   -pointsize 36                                                  \
                   -fill "#${color}"                                              \
                   -annotate +0+10                                                \
                   "Kontakt:"                                                     \
-                  src/qrcode_header_mail.png
+                  qrcode_header_mail.png
 
 
           # Embed contents on the QR code
-          convert src/qrcode_header_web.png                                      \
+          convert qrcode_header_web.png                                          \
                   -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf \
                   -gravity south                                                 \
                   -pointsize 36                                                  \
                   -fill "#${color}"                                              \
                   -annotate +0+10                                                \
                   "${domain}"                                                    \
-                  src/qrcode_web.png
+                  qrcode_web.png
 
-          convert src/qrcode_header_mail.png                                     \
+          convert qrcode_header_mail.png                                         \
                   -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf \
                   -gravity south                                                 \
                   -pointsize 36                                                  \
                   -fill "#${color}"                                              \
                   -annotate +0+10                                                \
                   "${email}"                                                     \
-                  src/qrcode_mail.png
+                  qrcode_mail.png
 
 
-          # Optimize PNG logo before publishing the site.
-          pngquant --skip-if-larger --verbose --strip src/logo.png &&
-            rm src/logo.png &&
-            mv src/logo-fs8.png src/logo.png
+          # Optimize flyer images before embedding the pdf.
+          pngquant --skip-if-larger --verbose --strip logo_flyer.png &&
+            rm logo_flyer.png &&
+            mv logo_flyer-fs8.png logo_flyer.png
 
+          pngquant --skip-if-larger --verbose --strip qrcode_web.png &&
+            rm qrcode_web.png &&
+            mv qrcode_web-fs8.png qrcode_web.png
 
-          # Optimize flyer images before publishing the site.
-          pngquant --skip-if-larger --verbose --strip src/logo_flyer.png &&
-            rm src/logo_flyer.png &&
-            mv src/logo_flyer-fs8.png src/logo_flyer.png
-
-          pngquant --skip-if-larger --verbose --strip src/qrcode_web.png &&
-            rm src/qrcode_web.png &&
-            mv src/qrcode_web-fs8.png src/qrcode_web.png
-
-          pngquant --skip-if-larger --verbose --strip src/qrcode_mail.png &&
-            rm src/qrcode_mail.png &&
-            mv src/qrcode_mail-fs8.png src/qrcode_mail.png
-
-
-          # Set domain for github pages
-          echo ${domain} > src/CNAME
+          pngquant --skip-if-larger --verbose --strip qrcode_mail.png &&
+            rm qrcode_mail.png &&
+            mv qrcode_mail-fs8.png qrcode_mail.png
 
 
           # Publish org files
@@ -152,8 +171,50 @@
         '';
 
         installPhase = ''
-          mkdir $out
-          cp -rv output/* $out
+          mv output/flyer.pdf $out
+        '';
+      };
+
+      packages.website = pkgs.stdenv.mkDerivation {
+        name = domain;
+
+        src = ./src;
+
+        nativeBuildInputs = [
+          pkgs.imagemagick
+          pkgs.inkscape
+          pkgs.pngquant
+          self.packages.${system}.hugo
+        ];
+
+        buildPhase = ''
+          # Export SVG to PNG
+          inkscape --export-type=png                     \
+                   --export-filename=static/img/logo.png \
+                   --export-width=768                    \
+                   static/img/logo.svg
+
+          # Optimize PNG logo before publishing the site.
+          pngquant --skip-if-larger --verbose --strip static/img/logo.png &&
+            rm static/img/logo.png &&
+            mv static/img/logo-fs8.png static/img/logo.png
+
+          # Copy flyer to static output
+          cp ${self.packages.${system}.flyer} static/${self.packages.${system}.flyer.name}
+
+          # Install fontawesome resources
+          install -m 644 -D ${self.packages.${system}.fontawesome}/scss/* -t themes/via/assets/scss/fontawesome
+          install -m 644 -D ${self.packages.${system}.fontawesome}/webfonts/* -t themes/via/static/fonts/fontawesome
+
+          # Build page
+          hugo --logLevel debug
+        '';
+
+        installPhase = ''
+          cp -vr public/ $out
+
+          # Set domain for github pages
+          echo ${domain} > $out/CNAME
         '';
       };
 

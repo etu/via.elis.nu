@@ -1,2 +1,13 @@
 # Ignore nix build results
 result*
+
+# Hugo files
+src/.hugo_build.lock
+src/public/
+src/resources/
+
+# Other build artifacts that doesn't need to be commited
+src/static/flyer.pdf
+src/static/img/logo.png
+src/themes/via/assets/scss/fontawesome/
+src/themes/via/static/
