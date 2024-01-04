@@ -60,7 +60,11 @@
           '';
         };
 
-      packages.flyer = pkgs.stdenv.mkDerivation {
+      packages.flyer = let
+        fontdir = "${pkgs.dejavu_fonts}/share/fonts/truetype";
+        fontpath = "${fontdir}/DejaVuSans.ttf";
+        fontsize = 46;
+      in pkgs.stdenv.mkDerivation {
         name = "flyer.pdf";
         src = ./.;
 
@@ -69,27 +73,7 @@
           pkgs.inkscape
           pkgs.pngquant
           pkgs.qrencode
-
-          ((pkgs.emacsPackagesFor pkgs.emacs-nox).emacsWithPackages (epkgs:
-            with epkgs; [
-              org
-            ]))
-
-          (pkgs.texlive.combine {
-            inherit
-              (pkgs.texlive)
-              scheme-basic
-              babel-swedish
-              booktabs
-              capt-of
-              cm-super
-              etoolbox
-              hyphen-swedish
-              parskip
-              ulem
-              wrapfig
-              ;
-          })
+          pkgs.typst
         ];
 
         buildPhase = ''
@@ -113,42 +97,42 @@
 
 
           # Embed description on the QR code
-          convert qrcode_plain_web.png                                           \
-                  -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf \
-                  -gravity north                                                 \
-                  -pointsize 36                                                  \
-                  -fill "#${color}"                                              \
-                  -annotate +0+10                                                \
-                  "Hemsida:"                                                     \
+          convert qrcode_plain_web.png                     \
+                  -font ${fontpath}                        \
+                  -gravity north                           \
+                  -pointsize ${builtins.toString fontsize} \
+                  -fill "#${color}"                        \
+                  -annotate +0+10                          \
+                  "Hemsida:"                               \
                   qrcode_header_web.png
 
-          convert qrcode_plain_mail.png                                          \
-                  -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf \
-                  -gravity north                                                 \
-                  -pointsize 36                                                  \
-                  -fill "#${color}"                                              \
-                  -annotate +0+10                                                \
-                  "Kontakt:"                                                     \
+          convert qrcode_plain_mail.png                    \
+                  -font ${fontpath}                        \
+                  -gravity north                           \
+                  -pointsize ${builtins.toString fontsize} \
+                  -fill "#${color}"                        \
+                  -annotate +0+10                          \
+                  "Kontakt:"                               \
                   qrcode_header_mail.png
 
 
           # Embed contents on the QR code
-          convert qrcode_header_web.png                                          \
-                  -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf \
-                  -gravity south                                                 \
-                  -pointsize 36                                                  \
-                  -fill "#${color}"                                              \
-                  -annotate +0+10                                                \
-                  "${domain}"                                                    \
+          convert qrcode_header_web.png                    \
+                  -font ${fontpath}                        \
+                  -gravity south                           \
+                  -pointsize ${builtins.toString fontsize} \
+                  -fill "#${color}"                        \
+                  -annotate +0+10                          \
+                  "${domain}"                              \
                   qrcode_web.png
 
-          convert qrcode_header_mail.png                                         \
-                  -font ${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf \
-                  -gravity south                                                 \
-                  -pointsize 36                                                  \
-                  -fill "#${color}"                                              \
-                  -annotate +0+10                                                \
-                  "${email}"                                                     \
+          convert qrcode_header_mail.png                   \
+                  -font ${fontpath}                        \
+                  -gravity south                           \
+                  -pointsize ${builtins.toString fontsize} \
+                  -fill "#${color}"                        \
+                  -annotate +0+10                          \
+                  "${email}"                               \
                   qrcode_mail.png
 
 
@@ -165,13 +149,12 @@
             rm qrcode_mail.png &&
             mv qrcode_mail-fs8.png qrcode_mail.png
 
-
-          # Publish org files
-          env HOME=. emacs --batch --load=publish.el
+          # Build the PDF
+          typst compile flyer.typst --font-path ${fontdir}
         '';
 
         installPhase = ''
-          mv output/flyer.pdf $out
+          mv flyer.pdf $out
         '';
       };
 
