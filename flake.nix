@@ -23,7 +23,7 @@
                    --export-filename=output.svg \
                    --vacuum-defs                \
                    --export-plain-svg           \
-                   --export-text-to-path ${./flag-flyer-a5.svg}
+                   --export-text-to-path ${./media/vegan-flag-flyer-a5.svg}
 
           mv output.svg $out
         '';
