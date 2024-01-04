@@ -64,99 +64,100 @@
         fontdir = "${pkgs.dejavu_fonts}/share/fonts/truetype";
         fontpath = "${fontdir}/DejaVuSans.ttf";
         fontsize = 46;
-      in pkgs.stdenv.mkDerivation {
-        name = "flyer.pdf";
-        src = ./.;
+      in
+        pkgs.stdenv.mkDerivation {
+          name = "flyer.pdf";
+          src = ./.;
 
-        nativeBuildInputs = [
-          pkgs.imagemagick
-          pkgs.inkscape
-          pkgs.pngquant
-          pkgs.qrencode
-          pkgs.typst
-        ];
+          nativeBuildInputs = [
+            pkgs.imagemagick
+            pkgs.inkscape
+            pkgs.pngquant
+            pkgs.qrencode
+            pkgs.typst
+          ];
 
-        buildPhase = ''
-          mkdir -p tmp
+          buildPhase = ''
+            mkdir -p tmp
 
-          # Export SVG to PNG
-          inkscape --export-type=png                \
-                   --export-filename=logo_flyer.png \
-                   --export-width=2480              \
-                   src/static/img/logo.svg
-
-
-          # Generate QR code with link
-          qrencode -m 9 -s 9 -l H -o qrcode_plain_web.png  \
-                   --foreground "${color}"                 \
-                   "https://${domain}"
-
-          qrencode -m 9 -s 9 -l H -o qrcode_plain_mail.png \
-                   --foreground "${color}"                 \
-                   "mailto:${email}?subject=Intresserad vegan i Arvika 🌱"
+            # Export SVG to PNG
+            inkscape --export-type=png                \
+                     --export-filename=logo_flyer.png \
+                     --export-width=2480              \
+                     src/static/img/logo.svg
 
 
-          # Embed description on the QR code
-          convert qrcode_plain_web.png                     \
-                  -font ${fontpath}                        \
-                  -gravity north                           \
-                  -pointsize ${builtins.toString fontsize} \
-                  -fill "#${color}"                        \
-                  -annotate +0+10                          \
-                  "Hemsida:"                               \
-                  qrcode_header_web.png
+            # Generate QR code with link
+            qrencode -m 9 -s 9 -l H -o qrcode_plain_web.png  \
+                     --foreground "${color}"                 \
+                     "https://${domain}"
 
-          convert qrcode_plain_mail.png                    \
-                  -font ${fontpath}                        \
-                  -gravity north                           \
-                  -pointsize ${builtins.toString fontsize} \
-                  -fill "#${color}"                        \
-                  -annotate +0+10                          \
-                  "Kontakt:"                               \
-                  qrcode_header_mail.png
+            qrencode -m 9 -s 9 -l H -o qrcode_plain_mail.png \
+                     --foreground "${color}"                 \
+                     "mailto:${email}?subject=Intresserad vegan i Arvika 🌱"
 
 
-          # Embed contents on the QR code
-          convert qrcode_header_web.png                    \
-                  -font ${fontpath}                        \
-                  -gravity south                           \
-                  -pointsize ${builtins.toString fontsize} \
-                  -fill "#${color}"                        \
-                  -annotate +0+10                          \
-                  "${domain}"                              \
-                  qrcode_web.png
+            # Embed description on the QR code
+            convert qrcode_plain_web.png                     \
+                    -font ${fontpath}                        \
+                    -gravity north                           \
+                    -pointsize ${builtins.toString fontsize} \
+                    -fill "#${color}"                        \
+                    -annotate +0+10                          \
+                    "Hemsida:"                               \
+                    qrcode_header_web.png
 
-          convert qrcode_header_mail.png                   \
-                  -font ${fontpath}                        \
-                  -gravity south                           \
-                  -pointsize ${builtins.toString fontsize} \
-                  -fill "#${color}"                        \
-                  -annotate +0+10                          \
-                  "${email}"                               \
-                  qrcode_mail.png
+            convert qrcode_plain_mail.png                    \
+                    -font ${fontpath}                        \
+                    -gravity north                           \
+                    -pointsize ${builtins.toString fontsize} \
+                    -fill "#${color}"                        \
+                    -annotate +0+10                          \
+                    "Kontakt:"                               \
+                    qrcode_header_mail.png
 
 
-          # Optimize flyer images before embedding the pdf.
-          pngquant --skip-if-larger --verbose --strip logo_flyer.png &&
-            rm logo_flyer.png &&
-            mv logo_flyer-fs8.png logo_flyer.png
+            # Embed contents on the QR code
+            convert qrcode_header_web.png                    \
+                    -font ${fontpath}                        \
+                    -gravity south                           \
+                    -pointsize ${builtins.toString fontsize} \
+                    -fill "#${color}"                        \
+                    -annotate +0+10                          \
+                    "${domain}"                              \
+                    qrcode_web.png
 
-          pngquant --skip-if-larger --verbose --strip qrcode_web.png &&
-            rm qrcode_web.png &&
-            mv qrcode_web-fs8.png qrcode_web.png
+            convert qrcode_header_mail.png                   \
+                    -font ${fontpath}                        \
+                    -gravity south                           \
+                    -pointsize ${builtins.toString fontsize} \
+                    -fill "#${color}"                        \
+                    -annotate +0+10                          \
+                    "${email}"                               \
+                    qrcode_mail.png
 
-          pngquant --skip-if-larger --verbose --strip qrcode_mail.png &&
-            rm qrcode_mail.png &&
-            mv qrcode_mail-fs8.png qrcode_mail.png
 
-          # Build the PDF
-          typst compile flyer.typst --font-path ${fontdir}
-        '';
+            # Optimize flyer images before embedding the pdf.
+            pngquant --skip-if-larger --verbose --strip logo_flyer.png &&
+              rm logo_flyer.png &&
+              mv logo_flyer-fs8.png logo_flyer.png
 
-        installPhase = ''
-          mv flyer.pdf $out
-        '';
-      };
+            pngquant --skip-if-larger --verbose --strip qrcode_web.png &&
+              rm qrcode_web.png &&
+              mv qrcode_web-fs8.png qrcode_web.png
+
+            pngquant --skip-if-larger --verbose --strip qrcode_mail.png &&
+              rm qrcode_mail.png &&
+              mv qrcode_mail-fs8.png qrcode_mail.png
+
+            # Build the PDF
+            typst compile flyer.typst --font-path ${fontdir}
+          '';
+
+          installPhase = ''
+            mv flyer.pdf $out
+          '';
+        };
 
       packages.website = pkgs.stdenv.mkDerivation {
         name = domain;
