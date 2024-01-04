@@ -6,3 +6,6 @@ theme: via
 disableKinds:
   - taxonomy
   - term
+
+params:
+  homeUrl: /
