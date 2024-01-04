@@ -1,4 +1,5 @@
-baseURL: 'https://example.org/'
+---
+baseURL: 'https://via.elis.nu/'
 defaultContentLanguage: sv
 title: 'Vegan i Arvika 🌱'
 theme: via
