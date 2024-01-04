@@ -78,8 +78,6 @@
           ];
 
           buildPhase = ''
-            mkdir -p tmp
-
             # Export SVG to PNG
             inkscape --export-type=png                \
                      --export-filename=logo_flyer.png \
