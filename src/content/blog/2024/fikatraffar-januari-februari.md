@@ -20,3 +20,5 @@ Vi träffas vid (kanske inne om det är kallt) Esperesso House vid
 Torget i Arvika.
 
 Vi ser fram emot att träffa er där. Väl mött.
+
+[{{< fa fab facebook >}} facebook evenemang.](https://fb.me/e/1BtnqEwRu)
