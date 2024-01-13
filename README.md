@@ -1,2 +1,2 @@
-* Vegans in Arvika website
+# Vegans in Arvika website
 Published using Emacs using nix.
