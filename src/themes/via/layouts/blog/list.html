@@ -1,10 +1,14 @@
 {{ define "main" }}
 <div class="content">
+    {{ if (.Title | len) }}
+    <h1>{{ .Title }}</h1>
+    {{ end }}
+    {{ .Content }}
     <div class="posts">
         {{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
         {{ range $paginator.Pages }}
         <div class="post">
-            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
             <span class="post-date">
                 {{ .Date.Format "2006-01-02" }}
                 {{ if not .Site.Params.hideReadingTime }}
@@ -16,10 +20,10 @@
             {{ .Content }}
             {{ else if .Description }}
             <p>{{ .Description }}</p>
-            <a href="{{ .Permalink }}">{{ i18n "read-on" }} &rarr;</a>
+            <a href="{{ .RelPermalink }}">{{ i18n "read-on" }} &rarr;</a>
             {{ else }}
             <p>{{ .Summary }}</p>
-            {{ if .Truncated }}<a href="{{ .Permalink }}">{{ i18n "read-on" }} &rarr;</a>{{ end }}
+            {{ if .Truncated }}<a href="{{ .RelPermalink }}">{{ i18n "read-on" }} &rarr;</a>{{ end }}
             {{ end }}
         </div>
         {{ end }}
