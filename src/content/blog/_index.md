@@ -1,5 +1,5 @@
 ---
-title: Blogg
+title: På gång
 ---
 Detta är vår primära källa för information som vi publicerar publikt.
 

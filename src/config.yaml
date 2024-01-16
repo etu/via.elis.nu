@@ -40,10 +40,6 @@ languages:
           url: /#kontakt
           weight: 20
 
-        - name: Media
-          url: /#i-media
-          weight: 30
-
-        - name: Blogg
+        - name: På gång
           url: /blog
-          weight: 40
+          weight: 30
