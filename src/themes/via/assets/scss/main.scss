@@ -19,6 +19,10 @@ body {
 
     font-size: 18px;
 
+    @media print {
+        max-width: none;
+    }
+
     h1,
     h2,
     h3 {
@@ -69,11 +73,5 @@ body {
 
     footer {
         border-top: 2px solid #2d7f35;
-    }
-}
-
-@media print {
-    body {
-        max-width: none
     }
 }
