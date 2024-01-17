@@ -12,15 +12,17 @@ $fa-font-path: "/fonts/fontawesome";
 body {
     color: #3c3c3c;
     background-color: #f0f0f0;
-	margin: 1em auto;
-	max-width: 40em;
-	padding: 0 .62em;
-	font: 1.2em/1.62 sans-serif;
+    margin: 1em auto;
+    max-width: 40em;
+    padding: 0 .62em;
+    font: 1.2em/1.62 sans-serif;
 
     font-size: 18px;
 
-    h1, h2, h3 {
-	    line-height: 3rem;
+    h1,
+    h2,
+    h3 {
+        line-height: 3rem;
     }
 
     blockquote {
@@ -71,7 +73,7 @@ body {
 }
 
 @media print {
-	body {
-		max-width: none
-	}
+    body {
+        max-width: none
+    }
 }
