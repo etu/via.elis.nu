@@ -4,4 +4,4 @@
 [![pages-build-deployment](https://github.com/etu/via.elis.nu/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/etu/via.elis.nu/actions/workflows/pages/pages-build-deployment)
 
 # Vegans in Arvika website
-Published using Emacs using nix.
+Published using [Hugo](https://gohugo.io) using [nix](https://nixos.org).
