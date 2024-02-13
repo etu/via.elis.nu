@@ -8,6 +8,7 @@ name: Publish
 
 jobs:
   publish:
+    name: Publish website
     runs-on: ubuntu-22.04
     permissions:
       contents: write
