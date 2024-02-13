@@ -3,5 +3,5 @@
 [![Update](https://github.com/etu/via.elis.nu/actions/workflows/update.yml/badge.svg)](https://github.com/etu/via.elis.nu/actions/workflows/update.yml)
 [![pages-build-deployment](https://github.com/etu/via.elis.nu/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/etu/via.elis.nu/actions/workflows/pages/pages-build-deployment)
 
-# Vegans in Arvika website
+# Vegans in Arvika website: [via.elis.nu](https://via.elis.nu)
 Published using [Hugo](https://gohugo.io) using [nix](https://nixos.org).
