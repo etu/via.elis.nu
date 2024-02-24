@@ -10,6 +10,7 @@ params:
   darkLogoPath: /img/logo.png
   lightLogoPath: /img/logo.png
   ogImagePath: /img/og-image.png
+  iconPath: false
 
   extraHeadContent: |-
     <!-- Matomo -->
