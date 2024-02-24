@@ -2,6 +2,7 @@
 title: 'P4 Värmland: Ingen veganmat i skolan — pappan orolig för barnens hälsa'
 description: 'P4 Värmland rapporterar om att Arvika röstar nej till vegankost. Vi blev intervjuade om detta i inslaget.'
 date: '2023-10-20T20:00:00+00:00'
+tags: [Media]
 ---
 Publicerat: [Ingen veganmat i skolan – pappan orolig för barnens hälsa](https://sverigesradio.se/ artikel/ingen-veganmat-i-skolan-pappan-orolig-for-barnens-halsa)
 

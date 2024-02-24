@@ -3,6 +3,7 @@ title: 'Arvika Nyheter: Arvika är Sveriges sämsta kommun för djuren?'
 description: Arvika är i botten av Djurens Rätts undersökning Djurvänlig kommun.
 date: '2023-04-25T12:00:00+02:00'
 url: /posts/2023-04-25-arvika-ar-sveriges-samsta-kommun-for-djuren.html
+tags: [Media]
 ---
 Publicerat: [Arvika Nyheter: Arvika är Sveriges sämsta kommun för djuren?](https://www.arvikanyheter.se/2023/04/25/arvika-ar-sveriges-samsta-kommun-for-djuren-8a4f1/)
 

@@ -3,6 +3,7 @@ title: 'Insändare: Arvika kommuns beslut säkerställer barns brist på näring
 description: Insändare om att Arvika kommun säkerställer näringsbrist hos veganska barn.
 date: '2023-10-20T20:30:00+02:00'
 url: /posts/2023-10-20-arvika-kommuns-beslut-sakerstaller-barns-brist-pa-naring.html
+tags: [Media]
 ---
 Publicerat: [Nya Wermlands-Tidningen: Nej till vegansk kost i skolan: ”Häpnadsväckande och tragiskt”](https://www.nwt.se/2023/10/23/nej-till-vegansk-kost-i-skolan-hapnadsvackande-och-tragiskt-8d2d6/), [Arvika Nyheter: Arvika kommuns beslut säkerställer barns brist på näring](https://www.arvikanyheter.se/2023/10/24/arvika-kommuns-beslut-sakerstaller-barns-brist-pa-naring-19db1/), även skickat till VF.
 

@@ -3,6 +3,7 @@ title: 'Arvika Nyheter: Vegetarisk skolmat för en hållbar framtid'
 description: Insändare om att Arvika Kommun borde satsa på vegetarisk skolmat för en hållbar framtid.
 date: '2023-03-30T07:00:00+01:00'
 url: /posts/2023-03-30-vegetarisk-skolmat-for-en-hallbar-framtid.html
+tags: [Media]
 ---
 Publicerat: [Arvika Nyheter: Vegetarisk skolmat för en hållbar framtid](https://www.arvikanyheter.se/2023/03/30/vegetarisk-skolmat-for-en-hallbar-framtid-7baa0/)
 
