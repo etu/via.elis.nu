@@ -48,9 +48,3 @@ som står nedan utan att känna att någon dömmer dem för att ha dessa
 Om du tycker att denna information saknas någonstans och du vill
 sprida den ytterligare så kan du ladda ner och skriva ut vårat
 [flygblad](./flyer.pdf).
-
-## I media
- - [Arvika Nyheter: Vegetarisk skolmat för en hållbar framtid](/posts/2023-03-30-vegetarisk-skolmat-for-en-hallbar-framtid.html)
- - [Arvika Nyheter: Arvika är Sveriges sämsta kommun för djuren?](/posts/2023-04-25-arvika-ar-sveriges-samsta-kommun-for-djuren.html)
- - [P4 Värmland: Ingen veganmat i skolan – pappan orolig för barnens hälsa](https://sverigesradio.se/artikel/ingen-veganmat-i-skolan-pappan-orolig-for-barnens-halsa)
- - [Insändare: Arvika kommuns beslut säkerställer barns brist på näring](/posts/2023-10-20-arvika-kommuns-beslut-sakerstaller-barns-brist-pa-naring.html)
