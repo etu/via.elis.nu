@@ -2,9 +2,9 @@
 title: 'Fikaträffar i januari & februari'
 date: '2024-01-04T21:30:00+01:00'
 description: ''
-ogImagePath: /blog/2024/fikatraffar-januari-februari.png
+ogImagePath: /blog/2024/fikatraffar-januari-februari/fikatraffar-januari-februari.png
 ---
-![Poster för träffarna](/blog/2024/fikatraffar-januari-februari.png)
+![Poster för träffarna](/blog/2024/fikatraffar-januari-februari/fikatraffar-januari-februari.png)
 
 [{{< fa fab facebook >}} facebook evenemang.](https://fb.me/e/1BtnqEwRu)
 
