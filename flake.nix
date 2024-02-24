@@ -1,20 +1,28 @@
 {
   description = "etu/via.elis.nu";
 
-  inputs.flake-utils.url = "flake-utils";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
+    flake-utils.url = "flake-utils";
+    taserud-theme-albatross.url = "github:TaserudConsulting/theme-albatross";
+    taserud-theme-albatross.inputs.flake-utils.follows = "flake-utils";
+  };
 
   outputs = {
     flake-utils,
     nixpkgs,
     self,
     ...
-  }:
+  } @ inputs:
     flake-utils.lib.eachSystem ["x86_64-linux"] (system: let
-      pkgs = import nixpkgs {inherit system;};
+      pkgs = nixpkgs.legacyPackages.${system};
+      tpkgs = inputs.taserud-theme-albatross.packages.${system};
       color = "2d7f35"; # Color used for qr codes and such
       domain = "via.elis.nu";
       email = "via@elis.nu";
     in {
+      packages.hugo = tpkgs.hugo;
+      packages.theme = tpkgs.theme;
       packages.plain-flag-flyer-a5 =
         pkgs.runCommandNoCC "plain-flag-flyer-a5" {
           nativeBuildInputs = [pkgs.inkscape];
@@ -27,38 +35,6 @@
 
           mv output.svg $out
         '';
-
-      packages.hugo = pkgs.symlinkJoin {
-        name = "hugo-${pkgs.hugo.version}-dart-sass-embedded-${pkgs.dart-sass.version}-bundle";
-
-        buildInputs = [pkgs.makeWrapper];
-        paths = [pkgs.hugo pkgs.dart-sass];
-
-        postBuild = "wrapProgram $out/bin/hugo --prefix PATH : ${pkgs.dart-sass}/bin";
-
-        meta.mainProgram = "hugo";
-      };
-
-      packages.fontawesome = let
-        version = "6.5.1";
-      in
-        pkgs.stdenv.mkDerivation {
-          pname = "fontawesome-free";
-          inherit version;
-
-          src = pkgs.fetchzip {
-            url = "https://use.fontawesome.com/releases/v${version}/fontawesome-free-${version}-web.zip";
-            hash = "sha256-gXXhKyTDC/Q6PBzpWRFvx/TxcUd3msaRSdC3ZHFzCoc=";
-          };
-
-          buildPhase = ":";
-
-          installPhase = ''
-            mkdir -p $out
-
-            cp -vr scss webfonts $out
-          '';
-        };
 
       packages.qrcode_web =
         pkgs.runCommandNoCC "qrcode_web" {
@@ -113,17 +89,22 @@
 
       packages.website = pkgs.stdenv.mkDerivation {
         name = domain;
-
         src = ./src;
 
         nativeBuildInputs = [
           pkgs.imagemagick
           pkgs.inkscape
           pkgs.pngquant
-          self.packages.${system}.hugo
+
+          # install theme pinned hugo
+          tpkgs.hugo
         ];
 
         buildPhase = ''
+          # Install theme
+          mkdir -p themes
+          ln -s ${tpkgs.theme} themes/${tpkgs.theme.theme-name}
+
           # Export SVG to PNG
           inkscape --export-type=png                     \
                    --export-filename=static/img/logo.png \
@@ -138,12 +119,8 @@
           # Copy flyer to static output
           cp ${self.packages.${system}.flyer} static/${self.packages.${system}.flyer.name}
 
-          # Install fontawesome resources
-          install -m 644 -D ${self.packages.${system}.fontawesome}/scss/* -t themes/via/assets/scss/fontawesome
-          install -m 644 -D ${self.packages.${system}.fontawesome}/webfonts/* -t themes/via/static/fonts/fontawesome
-
           # Build page
-          hugo --logLevel debug
+          hugo --logLevel debug --minify
         '';
 
         installPhase = ''

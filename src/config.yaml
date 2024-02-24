@@ -2,12 +2,13 @@
 baseURL: 'https://via.elis.nu/'
 defaultContentLanguage: sv
 title: 'Vegan i Arvika 🌱'
-theme: via
+theme: albatross
 
 params:
   copyrightOwner: 2023 Vegan i Arvika
 
-  logoPath: /img/logo.png
+  darkLogoPath: /img/logo.png
+  lightLogoPath: /img/logo.png
   ogImagePath: /img/og-image.png
 
   extraHeadContent: |-
@@ -30,6 +31,27 @@ params:
       })();
     </script>
     <!-- End Matomo Code -->
+
+  style:
+    # Toggle to enable or disable the CSS rules for the food menu layout,
+    # set to 'true' to enable or 'false' to disable.
+    page-include-food-menu-styles: 'false'
+
+    # Light colors
+    light-background-color: '#f0f0f0'
+    light-border-color: '#2d7f35'
+    light-foreground-color: '#3c3c3c'
+    light-menu-background: '#f0f0f0'
+    light-menu-foreground: '#3c3c3c'
+
+    ## Dark colors to not ave a light theme
+    dark-background-color: '#f0f0f0'
+    dark-border-color: '#2d7f35'
+    dark-foreground-color: '#3c3c3c'
+    dark-menu-background: '#f0f0f0'
+    dark-menu-foreground: '#3c3c3c'
+    dark-menu-item-hover-background: 'darken($dark-menu-background, 5%)'
+    dark-tag-background-color: 'darken($dark-background-color, 10%)'
 
 languages:
   sv:

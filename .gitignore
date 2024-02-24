@@ -5,6 +5,7 @@ result*
 src/.hugo_build.lock
 src/public/
 src/resources/
+src/themes/
 
 # Other build artifacts that doesn't need to be commited
 src/static/flyer.pdf
