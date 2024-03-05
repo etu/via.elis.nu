@@ -13,4 +13,6 @@ om våran syn på hållbarhet och hur det hänger ihop med veganism.
 Så till nästa möte (som är den 5e mars 2024 kl 18:00 i hörsalen på Arvika
 bibliotek) så har de bjudit in oss att föreläsa om just det.
 
+[{{< fa fab facebook >}} facebook evenemang](https://fb.me/e/4ktOrV8DY)
+
 ![Affish för nästa möte med "Nätverk för hållbart Arvika"](./affisch-infor-natverkstraff-5-mars-2024.webp)
