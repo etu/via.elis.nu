@@ -120,7 +120,7 @@
           cp ${self.packages.${system}.flyer} static/${self.packages.${system}.flyer.name}
 
           # Build page
-          hugo --logLevel debug --minify
+          hugo --logLevel debug
         '';
 
         installPhase = ''
