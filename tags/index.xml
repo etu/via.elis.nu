@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Vegan i Arvika 🌱</description>
     <generator>Hugo 0.125.0</generator>
     <language>sv</language>
-    <lastBuildDate>Sat, 06 Apr 2024 12:50:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2024 19:00:00 +0200</lastBuildDate>
     <atom:link href="https://via.elis.nu/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Media</title>
+      <link>https://via.elis.nu/tags/media/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://via.elis.nu/tags/media/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Träffar</title>
       <link>https://via.elis.nu/tags/tr%C3%A4ffar/</link>
@@ -27,13 +34,6 @@
       <link>https://via.elis.nu/tags/samarbeten/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://via.elis.nu/tags/samarbeten/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Media</title>
-      <link>https://via.elis.nu/tags/media/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://via.elis.nu/tags/media/</guid>
       <description></description>
     </item>
   </channel>
