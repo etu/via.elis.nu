@@ -5,7 +5,7 @@ date: '2024-04-22T19:00:00+02:00'
 tags: [Media]
 ---
 
-Skickat till Arvika Nyheter.
+Publicerat: [Alvika Nyheter: Arvika - utan ranking](https://www.arvikanyheter.se/2024/04/29/arvika-utan-ranking-243aa/).
 
 Nu har Djurens Rätt återigen släppt sin årliga undersökning Djurvänlig
 kommun. Förra året hade Arvika kommun 3 av 174 möjliga poäng. I år har
