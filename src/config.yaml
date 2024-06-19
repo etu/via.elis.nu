@@ -67,5 +67,5 @@ languages:
           weight: 20
 
         - name: På gång
-          url: /blog
+          url: /blog/
           weight: 30
