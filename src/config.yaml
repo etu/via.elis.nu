@@ -4,6 +4,11 @@ defaultContentLanguage: sv
 title: 'Vegan i Arvika 🌱'
 theme: albatross
 
+# Style code highlights with classes rather than inline styles.
+markup:
+  highlight:
+    noClasses: false
+
 params:
   copyrightOwner: 2023 Vegan i Arvika
 
