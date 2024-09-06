@@ -50,14 +50,10 @@ params:
     light-menu-background: '#f0f0f0'
     light-menu-foreground: '#3c3c3c'
 
-    ## Dark colors to not ave a light theme
-    dark-background-color: '#f0f0f0'
+    # Dark colors
+    dark-background-color: '#1C201B'
     dark-border-color: '#2d7f35'
-    dark-foreground-color: '#3c3c3c'
-    dark-menu-background: '#f0f0f0'
-    dark-menu-foreground: '#3c3c3c'
-    dark-menu-item-hover-background: 'darken($dark-menu-background, 5%)'
-    dark-tag-background-color: 'darken($dark-background-color, 10%)'
+    dark-menu-background: '#273F2D'
 
 languages:
   sv:
