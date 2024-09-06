@@ -67,6 +67,10 @@ languages:
           url: /#kontakt
           weight: 20
 
+        - name: Hållbarhet
+          url: /hållbarhet/
+          weight: 30
+
         - name: På gång
           url: /blog/
-          weight: 30
+          weight: 40
