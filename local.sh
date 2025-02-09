@@ -1,10 +1,10 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash -p xdg_utils
+#! nix-shell -i bash -p xdg-utils
 
 set -euo pipefail
 
 # Build the theme for the spcified page and place the symlink in the correct location.
-nix build .#theme --out-link src/themes/$(nix eval .#theme.theme-name --raw)
+nix build .#theme --out-link "src/themes/$(nix eval .#theme.theme-name --raw)"
 
 # Build icon
 rm -f src/static/img/logo.png &&
