@@ -9,13 +9,12 @@ name: Publish
 jobs:
   publish:
     name: Publish website
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: DeterminateSystems/nix-installer-action@v17
-      - uses: DeterminateSystems/magic-nix-cache-action@v9
 
       - run: nix build .#website
 
