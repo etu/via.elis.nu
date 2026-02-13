@@ -67,7 +67,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
-        "taserud-theme-albatross": "taserud-theme-albatross"
+        "theme-albatross": "theme-albatross"
       }
     },
     "systems": {
@@ -85,7 +85,7 @@
         "type": "github"
       }
     },
-    "taserud-theme-albatross": {
+    "theme-albatross": {
       "inputs": {
         "flake-utils": [
           "flake-utils"
@@ -96,21 +96,21 @@
       "locked": {
         "lastModified": 1770947074,
         "narHash": "sha256-RBi4M6aDFmtEABL63UwpyRcWwsaZfnkxXHwFaect+xM=",
-        "owner": "TaserudConsulting",
-        "repo": "theme-albatross",
+        "owner": "etu",
+        "repo": "hugo-theme-albatross",
         "rev": "fb276244f9c911dc5dc57af14ed5c6030552762e",
         "type": "github"
       },
       "original": {
-        "owner": "TaserudConsulting",
-        "repo": "theme-albatross",
+        "owner": "etu",
+        "repo": "hugo-theme-albatross",
         "type": "github"
       }
     },
     "web-iso-flags": {
       "inputs": {
         "flake-utils": [
-          "taserud-theme-albatross",
+          "theme-albatross",
           "flake-utils"
         ],
         "nixpkgs": "nixpkgs_3"

@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
     flake-utils.url = "flake-utils";
-    taserud-theme-albatross.url = "github:TaserudConsulting/theme-albatross";
-    taserud-theme-albatross.inputs.flake-utils.follows = "flake-utils";
+    theme-albatross.url = "github:etu/hugo-theme-albatross";
+    theme-albatross.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs = {
@@ -16,7 +16,7 @@
   } @ inputs:
     flake-utils.lib.eachSystem ["x86_64-linux"] (system: let
       pkgs = nixpkgs.legacyPackages.${system};
-      tpkgs = inputs.taserud-theme-albatross.packages.${system};
+      tpkgs = inputs.theme-albatross.packages.${system};
       color = "2d7f35"; # Color used for qr codes and such
       domain = "via.elis.nu";
       email = "via@elis.nu";
