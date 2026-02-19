@@ -20,12 +20,10 @@ dock att man följer uppförandekoden.
 ## Kontakt
 Om du är intresserad av att träffas och delta av information när vi
 tänkte träffas så skicka gärna ett mail till
-[via@elis.nu](mailto:via@elis.nu?subject=Intresserad%20vegan%20i%20Arvika%20🌱)
+[elis+via@hirwing.se](mailto:elis+via@hirwing.se?subject=Intresserad%20vegan%20i%20Arvika%20🌱)
 så hör vi av oss.
 
-Vi har även en informationssida på [{{< fa fab facebook >}} facebook](https://www.facebook.com/veganiarvika).
-
-Samt en grupp för kommunikation: [{{< fa fab facebook >}} facebook grupp](https://www.facebook.com/groups/veganiarvika).
+Vi har en grupp: [{{< fa fab facebook >}} facebook grupp](https://www.facebook.com/groups/veganiarvika).
 
 ## Uppförandekod
 Det primära syftet med gruppen är att veganer ska känna sig bekväma

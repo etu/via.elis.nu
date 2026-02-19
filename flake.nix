@@ -19,7 +19,7 @@
       tpkgs = inputs.theme-albatross.packages.${system};
       color = "2d7f35"; # Color used for qr codes and such
       domain = "via.elis.nu";
-      email = "via@elis.nu";
+      email = "elis+via@hirwing.se";
     in {
       packages.hugo = tpkgs.hugo;
       packages.theme = tpkgs.theme;
