@@ -23,7 +23,8 @@ tänkte träffas så skicka gärna ett mail till
 [elis+via@hirwing.se](mailto:elis+via@hirwing.se?subject=Intresserad%20vegan%20i%20Arvika%20🌱)
 så hör vi av oss.
 
-Vi har en grupp: [{{< fa fab facebook >}} facebook grupp](https://www.facebook.com/groups/veganiarvika).
+För facebook så finns det en grupp av andra veganer/vegeterianer i
+Arvika som heter [{{< fa fab facebook>}} Vegeterianer & veganer i Arvika](https://www.facebook.com/groups/305999436227374/).
 
 ## Uppförandekod
 Det primära syftet med gruppen är att veganer ska känna sig bekväma
